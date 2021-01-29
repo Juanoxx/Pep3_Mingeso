@@ -1,12 +1,9 @@
-version: '3'
+version: '2'
 services:
-  vue-ui:
-    build:
-      context: ./vueapp
-      dockerfile: Dockerfile
+  main:
+    image: golang
+    build: ./
+    environment:
+      - TEST_ENV=test
     ports:
-      - "8081:8081"
-    container_name: vue-ui
-    volumes:
-       - ./my-app:/usr/src/app/my-app
-       - /usr/src/app/my-app/node_modules
+      - 8000:8000 
