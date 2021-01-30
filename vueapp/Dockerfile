@@ -1,11 +1,12 @@
 FROM node:10
 
-WORKDIR /usr/Documentos/vue/vueapp
 
-COPY package*.json ./
+ADD . /home
+        
+WORKDIR /home
 
-RUN npm install
 
 EXPOSE 8081
 
 CMD ["npm", "run", "serve"]
+

@@ -1,0 +1,9 @@
+version: '3'
+services:
+  main:
+    image: vue-cli
+    build: ./
+    environment:
+      - TEST_ENV=test
+    ports:
+      - 8000:8000 
