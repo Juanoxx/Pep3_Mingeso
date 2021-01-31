@@ -8,16 +8,6 @@ pipeline {
             }
         }
 
-        stage('docker') {
-            steps {
-                dir('src')
-                {
-                    sh '''
-                            bash -c "main.py"
-                    '''
-                }
-            }
-        }
         stage('Build') {
             steps {
                 echo 'Building..'
