@@ -20,14 +20,15 @@ pipeline {
         stage('Analisis-estatico') {
             steps {
                 echo 'Realizando análisis estático con Pylint..'
-                sh '''
-                        bash -c "python3 -m pylint \\main.py"
-                '''
             }
         }
         stage('Deploy') {
             steps {
-                echo 'Deploying....'
+                echo 'Desplegando....'
+                bat 'docker build -f Dockerfile -t myappcontainer:1'
+                bat 'docker run -it myappcontainer:1 bash'
+                bat 'kubectl apply -f deployment.yaml'
+                bat 'minikube dashboard'
             }
         }
     }
