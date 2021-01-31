@@ -1,5 +1,5 @@
 pipeline {
-    agent any
+    aagent { dockerfile true }
 
     stages {
         stage('Checkout-git') {
@@ -13,7 +13,7 @@ pipeline {
                 dir('src')
                 {
                     sh '''
-                            bash -c "sudo docker-compose up"
+                            bash -c "main.py"
                     '''
                 }
             }
