@@ -20,9 +20,7 @@ pipeline {
         stage('Analisis-estatico') {
             steps {
                 echo 'Realizando análisis estático con Pylint..'
-                sh '''
-                        bash -c "su python3 -m pylint \\main.py"
-                '''
+                
             }
         }
         stage('Deploy') {
