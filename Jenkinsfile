@@ -1,5 +1,5 @@
 pipeline {
-    agent any
+    agent { dockerfile true }
 
     stages {
         stage('Checkout-git') {
@@ -10,7 +10,7 @@ pipeline {
 
         stage('Build') {
             steps {
-                dockerfile true 
+                echo 'Building..'
             }
         }
         stage('Test') {
