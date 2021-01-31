@@ -26,9 +26,9 @@ pipeline {
         stage('Deploy') {
             steps {
                 echo 'Desplegando....'
-                sh '''
-                        bash -c "docker-compose up"
-                '''
+                sh 'docker build -f Dockerfile -t myappcontainer:1 .'
+                sh 'docker run -it myappcontainer:1 bash'
+                
             }
         }
     }
