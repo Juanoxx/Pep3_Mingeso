@@ -4,18 +4,25 @@ pipeline {
     stages {
         stage('Checkout-git') {
             steps {
+                echo 'Tomando los datos desde repositorio Github..'
                 git poll: true, url: 'https://github.com/Juanoxx/Pep3_Mingeso'
             }
         }
 
-        stage('Build') {
+        stage('Pruebas-Unitarias') {
             steps {
-                echo 'Building..'
+                echo 'Realizando las pruebas unitarias con Pytest..'
+                sh '''
+                        bash -c "pytest"
+                '''
             }
         }
-        stage('Test') {
+        stage('Analisis-estatico') {
             steps {
-                sh 'python3 --version'
+                echo 'Realizando análisis estático con Pylint..'
+                sh '''
+                        bash -c "python3 -m pylint \main.py"
+                '''
             }
         }
         stage('Deploy') {

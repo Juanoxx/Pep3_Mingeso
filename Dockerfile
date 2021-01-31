@@ -6,6 +6,8 @@ ENV PATH="$VIRTUAL_ENV/bin:$PATH"
 
 # Install dependencies:
 RUN pip install flask
+RUN pip install pytest
+RUN pip install pylint --upgrade
 
 # Run the application:
 COPY main.py .
