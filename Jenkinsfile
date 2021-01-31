@@ -12,7 +12,9 @@ pipeline {
             steps {
                 dir('src')
                 {
-                    bat 'docker-compose up'
+                    sh '''
+                    docker-compose up'
+                    '''
                 }
             }
         }
