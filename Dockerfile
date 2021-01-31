@@ -8,6 +8,8 @@ ENV PATH="$VIRTUAL_ENV/bin:$PATH"
 RUN pip install flask
 RUN pip install pytest
 RUN pip install pylint
+RUN curl -L "https://github.com/docker/compose/releases/download/1.26.0/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+
 
 # Run the application:
 COPY main.py .
