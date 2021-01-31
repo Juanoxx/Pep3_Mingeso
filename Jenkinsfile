@@ -21,7 +21,7 @@ pipeline {
             steps {
                 echo 'Realizando análisis estático con Pylint..'
                 sh '''
-                        bash -c "cd && cd home\\juanoxx && python3 -m pylint \\main.py"
+                        bash -c "cd && cd home\\juanoxx\\Documentos\\Pep3_Mingeso && python3 -m pylint \\main.py"
                 '''
             }
         }
