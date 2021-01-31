@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: myappcontainer
+  labels:
+    app: myappcontainer
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: myappcontainer
+  template:
+    metadata:
+      labels:
+        app: myappcontainer
+    spec:
+      containers:
+      - name: myappcontainer
+        image: python:3.8-slim-buster
+        ports:
+        - containerPort: 5000
