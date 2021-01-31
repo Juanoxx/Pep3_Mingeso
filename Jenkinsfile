@@ -27,7 +27,7 @@ pipeline {
             steps {
                 echo 'Desplegando....'
                 sh '''
-                        bash -c "docker-compose up"
+                        docker-compose up
                 '''
             }
         }
