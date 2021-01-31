@@ -26,7 +26,7 @@ pipeline {
         stage('Deploy') {
             steps {
                 echo 'Desplegando....'
-                build 'docker-compose up'
+                withDockerContainer 'docker-compose up'
             }
         }
     }
