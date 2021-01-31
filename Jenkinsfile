@@ -20,11 +20,12 @@ pipeline {
         stage('Analisis-estatico') {
             steps {
                 echo 'Realizando análisis estático con Pylint..'
-                dir('/home/juanoxx/Documentos/Pep3_Mingeso/')
+                dir('/home/juanoxx/Documentos/Pep3_Mingeso/'){
                 sh '''
                         bash -c "
                                  python3 -m pylint \\main.py"
                 '''
+            }
             }
         }
         stage('Deploy') {
