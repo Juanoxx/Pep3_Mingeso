@@ -23,7 +23,7 @@ pipeline {
                 sh '''
                         bash -c "sudo -i &&
                                  cd /var/lib/jenkins/workspace/ &&
-                                 cd pipeline\ example &&
+                                 cd pipeline\\ example &&
                                  python3 -m pylint \\main.py"
                 '''
             }
