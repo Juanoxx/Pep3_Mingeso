@@ -13,7 +13,7 @@ pipeline {
                 dir('src')
                 {
                     sh '''
-                            bash -c "docker-compose up"
+                            bash -c "sudo docker-compose up"
                     '''
                 }
             }
