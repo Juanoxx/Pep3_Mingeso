@@ -1,5 +1,5 @@
 pipeline {
-    dir('src'){agent { dockerfile true }}
+    agent { dockerfile true }
 
     stages {
         stage('Checkout-git') {
