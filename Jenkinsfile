@@ -21,9 +21,7 @@ pipeline {
             steps {
                 echo 'Realizando análisis estático con Pylint..'
                 sh '''
-                        bash -c "sudo -i &&
-                                 cd /var/lib/jenkins/workspace/ &&
-                                 cd pipeline\\ example &&
+                        bash -c "cd /home/juanoxx/Documentos/Pep3_Mingeso/ &&
                                  python3 -m pylint \\main.py"
                 '''
             }
