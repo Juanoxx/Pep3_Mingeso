@@ -26,8 +26,6 @@ pipeline {
         stage('Deploy') {
             steps {
                 echo 'Desplegando....'
-                sh 'docker build -f Dockerfile -t myappcontainer:1 .'
-                sh 'docker run -it myappcontainer:1 bash'
                 
             }
         }
