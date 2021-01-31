@@ -25,10 +25,6 @@ pipeline {
         stage('Deploy') {
             steps {
                 echo 'Desplegando....'
-                bat 'docker build -f Dockerfile -t myappcontainer:1'
-                bat 'docker run -it myappcontainer:1 bash'
-                bat 'kubectl apply -f deployment.yaml'
-                bat 'minikube dashboard'
             }
         }
     }
