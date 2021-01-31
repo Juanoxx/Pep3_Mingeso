@@ -16,4 +16,4 @@ def test_suma():
     assert suma(2,9) == 11
 
 def test_suma():
-    assert suma(3.2,3.2) == 10
+    assert suma(3.2,3.2) == 6.4
