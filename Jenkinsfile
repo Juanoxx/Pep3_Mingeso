@@ -26,9 +26,7 @@ pipeline {
         stage('Deploy') {
             steps {
                 echo 'Desplegando....'
-                sh '''
-                        docker-compose up
-                '''
+                bat 'docker-compose up'
             }
         }
     }
